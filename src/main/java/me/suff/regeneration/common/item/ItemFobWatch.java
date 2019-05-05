@@ -165,4 +165,9 @@ public class ItemFobWatch extends ItemOverrideBase {
 	public int getMaxDamage(ItemStack stack) {
 		return RegenConfig.COMMON.regenCapacity.get();
 	}
+	
+	@Override
+	public boolean isRepairable() {
+		return false;
+	}
 }
