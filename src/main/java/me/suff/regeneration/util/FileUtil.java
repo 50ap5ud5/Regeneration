@@ -1,7 +1,6 @@
 package me.suff.regeneration.util;
 
 import me.suff.regeneration.RegenerationMod;
-import me.suff.regeneration.Trending;
 import me.suff.regeneration.client.skinhandling.ImageFixerLegacy;
 import me.suff.regeneration.client.skinhandling.SkinChangingHandler;
 import org.apache.commons.io.FileUtils;

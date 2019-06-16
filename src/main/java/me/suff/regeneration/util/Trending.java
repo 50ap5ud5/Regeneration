@@ -1,8 +1,10 @@
-package me.suff.regeneration;
+package me.suff.regeneration.util;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import me.suff.regeneration.RegenConfig;
+import me.suff.regeneration.RegenerationMod;
 import me.suff.regeneration.client.skinhandling.SkinChangingHandler;
 import me.suff.regeneration.util.FileUtil;
 import org.apache.commons.io.FileUtils;
@@ -17,17 +19,18 @@ import java.net.URL;
 
 public class Trending {
 	
+	private static final File TRENDING_DIR = new File(SkinChangingHandler.SKIN_DIRECTORY_ALEX.toPath().toString() + "/namemc_trending/");
+	
 	public static void downloadTrendingSkins() throws IOException {
 		if (!RegenConfig.CLIENT.downloadTrendingSkins.get()) return;
-		File trendingDir = new File(SkinChangingHandler.SKIN_DIRECTORY_ALEX.toPath().toString() + "/namemc_trending/");
-		if (!trendingDir.exists()) {
-			trendingDir.mkdirs();
+		if (!TRENDING_DIR.exists()) {
+			TRENDING_DIR.mkdirs();
 		}
 		
-		long attr = trendingDir.lastModified();
+		long lastModified = TRENDING_DIR.lastModified();
 		
-		if (System.currentTimeMillis() - attr >= 86400000) {
-			FileUtils.deleteDirectory(trendingDir);
+		if (System.currentTimeMillis() - lastModified >= 86400000) {
+			FileUtils.deleteDirectory(TRENDING_DIR);
 			RegenerationMod.LOG.warn("Refreshing Trending skins");
 			try {
 				String url = "https://namemc.com/minecraft-skins";
@@ -43,7 +46,7 @@ public class Trending {
 				
 				imagesUrl.iterator().forEachRemaining(jsonElement -> {
 					try {
-						FileUtil.downloadSkinImage(new URL(jsonElement.getAsJsonObject().get("sameAs").getAsString().replace("https://namemc.com/skin/", "https://namemc.com/texture/") + ".png"), trendingDir, "namemc_" + System.currentTimeMillis());
+						FileUtil.downloadSkinImage(new URL(jsonElement.getAsJsonObject().get("sameAs").getAsString().replace("https://namemc.com/skin/", "https://namemc.com/texture/") + ".png"), TRENDING_DIR, "namemc_" + System.currentTimeMillis());
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
