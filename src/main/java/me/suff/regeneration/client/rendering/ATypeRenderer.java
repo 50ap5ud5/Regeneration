@@ -1,8 +1,8 @@
 package me.suff.regeneration.client.rendering;
 
-import me.suff.regeneration.client.events.AnimationEvent;
 import me.suff.regeneration.common.capability.IRegeneration;
 import me.suff.regeneration.common.types.IRegenType;
+import me.swirtzly.animateme.events.AnimationEvent;
 import net.minecraft.client.renderer.entity.RenderLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraftforge.client.event.RenderPlayerEvent;

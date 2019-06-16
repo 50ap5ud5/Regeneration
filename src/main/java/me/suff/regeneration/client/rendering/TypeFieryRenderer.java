@@ -1,10 +1,10 @@
 package me.suff.regeneration.client.rendering;
 
-import me.suff.regeneration.client.events.AnimationEvent;
 import me.suff.regeneration.common.capability.CapabilityRegeneration;
 import me.suff.regeneration.common.capability.IRegeneration;
 import me.suff.regeneration.common.types.TypeFiery;
 import me.suff.regeneration.util.RenderUtil;
+import me.swirtzly.animateme.events.AnimationEvent;
 import net.minecraft.client.renderer.BufferBuilder;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.Tessellator;

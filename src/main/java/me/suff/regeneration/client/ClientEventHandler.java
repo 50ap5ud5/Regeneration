@@ -2,7 +2,6 @@ package me.suff.regeneration.client;
 
 import me.suff.regeneration.RegenConfig;
 import me.suff.regeneration.RegenerationMod;
-import me.suff.regeneration.client.events.AnimationEvent;
 import me.suff.regeneration.client.gui.GuiCustomizer;
 import me.suff.regeneration.client.skinhandling.SkinChangingHandler;
 import me.suff.regeneration.client.skinhandling.SkinInfo;
@@ -16,6 +15,7 @@ import me.suff.regeneration.network.NetworkHandler;
 import me.suff.regeneration.util.ClientUtil;
 import me.suff.regeneration.util.EnumCompatModids;
 import me.suff.regeneration.util.RenderUtil;
+import me.swirtzly.animateme.events.AnimationEvent;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.ISound;
 import net.minecraft.client.audio.SimpleSound;
