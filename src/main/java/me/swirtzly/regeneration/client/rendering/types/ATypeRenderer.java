@@ -11,27 +11,27 @@ import net.minecraftforge.client.event.RenderPlayerEvent.Pre;
 
 public abstract class ATypeRenderer<T> {
 	
-	protected abstract void renderRegeneratingPlayerPre(T type, Pre event, IRegeneration capability);
+	protected abstract void renderRegeneratingPre(T type, Pre event, IRegeneration capability);
 	
-	protected abstract void renderRegeneratingPlayerPost(T type, RenderPlayerEvent.Post event, IRegeneration capability);
+	protected abstract void renderRegeneratingPost(T type, RenderPlayerEvent.Post event, IRegeneration capability);
 	
 	protected abstract void renderRegenerationLayer(T type, RenderLivingBase<?> renderLivingBase, IRegeneration capability, EntityPlayer entityPlayer, float limbSwing, float limbSwingAmount, float partialTicks, float ageInTicks, float netHeadYaw, float headPitch, float scale);
 	
 	// Generic casting convenience methods:
 	
 	@SuppressWarnings("unchecked")
-	public final void onRenderRegeneratingPlayerPre(IRegenType<?> type, Pre event, IRegeneration capability) {
+	public final void onRenderRegeneratingPre(IRegenType<?> type, Pre event, IRegeneration capability) {
 		try {
-			renderRegeneratingPlayerPre((T) type, event, capability);
+			renderRegeneratingPre((T) type, event, capability);
 		} catch (ClassCastException e) {
 			throw new IllegalStateException("RegenType <-> RegenRenderType mismatch", e);
 		}
 	}
 	
 	@SuppressWarnings("unchecked")
-	public final void onRenderRegeneratingPlayerPost(IRegenType<?> type, RenderPlayerEvent.Post event, IRegeneration capability) {
+	public final void onRenderRegeneratingPost(IRegenType<?> type, RenderPlayerEvent.Post event, IRegeneration capability) {
 		try {
-			renderRegeneratingPlayerPost((T) type, event, capability);
+			renderRegeneratingPost((T) type, event, capability);
 		} catch (ClassCastException e) {
 			throw new IllegalStateException("RegenType <-> RegenRenderType mismatch", e);
 		}
@@ -48,6 +48,6 @@ public abstract class ATypeRenderer<T> {
 
 	public abstract boolean onAnimateRegen(AnimationContext animationContext);
 	
-	public abstract void renderHand(EntityPlayer player, EnumHandSide handSide, RenderLivingBase<?> render);
+	public abstract void onRenderHand(EntityPlayer player, EnumHandSide handSide, RenderLivingBase<?> render);
 	
 }

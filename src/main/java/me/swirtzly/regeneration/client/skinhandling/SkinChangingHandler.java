@@ -275,7 +275,7 @@ public class SkinChangingHandler {
 			if (type.getAnimationProgress(cap) > 0.7) {
 				setSkinFromData(player, cap, false);
 			}
-			type.getRenderer().onRenderRegeneratingPlayerPre(type, e, cap);
+			type.getRenderer().onRenderRegeneratingPre(type, e, cap);
 		} else if (!PLAYER_SKINS.containsKey(player.getUniqueID())) {
 			setSkinFromData(player, cap, true);
 		} else {
@@ -298,7 +298,7 @@ public class SkinChangingHandler {
 		IRegenType type = TypeHandler.getTypeInstance(cap.getType());
 		
 		if (cap.getState() == PlayerUtil.RegenState.REGENERATING) {
-			type.getRenderer().onRenderRegeneratingPlayerPost(type, e, cap);
+			type.getRenderer().onRenderRegeneratingPost(type, e, cap);
 		}
 		
 	}

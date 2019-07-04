@@ -32,7 +32,7 @@ public class TypeFieryRenderer extends ATypeRenderer<TypeFiery> {
 	}
 	
 	@Override
-	public void renderRegeneratingPlayerPre(TypeFiery type, RenderPlayerEvent.Pre ev, IRegeneration cap) {
+	public void renderRegeneratingPre(TypeFiery type, RenderPlayerEvent.Pre ev, IRegeneration cap) {
 	}
 	
 	public static void renderCone(EntityPlayer entityPlayer, float scale, float scale2, Vec3d color) {
@@ -73,7 +73,7 @@ public class TypeFieryRenderer extends ATypeRenderer<TypeFiery> {
 	}
 	
 	@Override
-	protected void renderRegeneratingPlayerPost(TypeFiery type, RenderPlayerEvent.Post event, IRegeneration capability) {
+	protected void renderRegeneratingPost(TypeFiery type, RenderPlayerEvent.Post event, IRegeneration capability) {
 	
 	}
 	
@@ -171,7 +171,7 @@ public class TypeFieryRenderer extends ATypeRenderer<TypeFiery> {
 	
 	@Deprecated //This duplicated code needs sorted asap
 	@Override
-	public void renderHand(EntityPlayer player, EnumHandSide handSide, RenderLivingBase<?> render) {
+	public void onRenderHand(EntityPlayer player, EnumHandSide handSide, RenderLivingBase<?> render) {
 		renderConeAtArms(player, render, handSide);
 	}
 	

@@ -57,7 +57,7 @@ public class CapabilityRegeneration implements IRegeneration {
 	private boolean didSetup = false, traitActive = true;
 	private int regenerationsLeft;
 	private PlayerUtil.RegenState state = PlayerUtil.RegenState.ALIVE;
-	private TypeHandler.RegenType regenType = TypeHandler.RegenType.FIERY;
+	private TypeHandler.RegenType regenType = TypeHandler.RegenType.SNEEZE;
 	
 	private String BASE64_SKIN = "NONE";
 	

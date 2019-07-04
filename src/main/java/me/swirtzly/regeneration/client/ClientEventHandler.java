@@ -311,7 +311,7 @@ public class ClientEventHandler {
 			return;
 
 		IRegeneration cap = CapabilityRegeneration.getForPlayer(player);
-		boolean flag = cap.getType() == TypeHandler.RegenType.CONFUSED && cap.getState() == REGENERATING;
+		boolean flag = cap.getState() == REGENERATING;
 		e.setCanceled(flag);
 
 		if (!cap.areHandsGlowing() || !flag)

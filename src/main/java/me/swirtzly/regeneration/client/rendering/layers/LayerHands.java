@@ -60,7 +60,7 @@ public class LayerHands implements LayerRenderer<EntityPlayer> {
 		}
 		
 		if (type == EnumHandRenderType.REGEN) {
-			TypeHandler.getTypeInstance(data.getType()).getRenderer().renderHand(player, handSide, livingEntityRenderer);
+			TypeHandler.getTypeInstance(data.getType()).getRenderer().onRenderHand(player, handSide, livingEntityRenderer);
 		}
 		GlStateManager.popMatrix();
 	}
